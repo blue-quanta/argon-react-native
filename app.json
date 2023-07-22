@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Argon FREE React Native",
-    "slug": "argon-free-react-native",
+    "name": "Blue Quanta",
+    "slug": "blue-quanta",
     "privacy": "public",
     "platforms": [
       "ios",
@@ -22,8 +22,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bluequanta.bluequanta"
     },
-    "description": "Argon React Native, based on Argon Design System. Coded by Creative Tim"
+    "description": "Blue Quanta LLC",
+    "extra": {
+      "eas": {
+        "projectId": "b966826c-81df-487a-84ab-0516e1ff1016"
+      }
+    },
+    "owner": "bluequanta",
+    "android": {
+      "package": "com.bluequanta.bluequanta"
+    }
   }
 }

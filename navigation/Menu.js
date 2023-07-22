@@ -1,9 +1,18 @@
-import { Block, Text, theme } from "galio-framework";
-import { Image, ScrollView, StyleSheet } from "react-native";
-
-import { DrawerItem as DrawerCustomItem } from "../components";
-import Images from "../constants/Images";
 import React from "react";
+import {
+  ScrollView,
+  StyleSheet,
+  Dimensions,
+  Image,
+  TouchableOpacity,
+  Linking,
+} from "react-native";
+import { Block, Text, theme } from "galio-framework";
+import { useSafeArea } from "react-native-safe-area-context";
+import Images from "../constants/Images";
+import { DrawerItem as DrawerCustomItem } from "../components/index";
+
+const { width } = Dimensions.get("screen");
 
 function CustomDrawerContent({
   drawerPosition,
@@ -13,7 +22,15 @@ function CustomDrawerContent({
   state,
   ...rest
 }) {
-  const screens = ["Home", "Profile", "Account", "Elements", "Articles"];
+  const insets = useSafeArea();
+  const screens = [
+    "Home",
+    "Profile",
+    "Account",
+    "Elements",
+    "Articles",
+    "Settings",
+  ];
   return (
     <Block
       style={styles.container}
@@ -45,8 +62,15 @@ function CustomDrawerContent({
                 borderWidth: StyleSheet.hairlineWidth,
               }}
             />
-            <Text color="#8898AA" style={{ marginTop: 16, marginLeft: 8 }}>
-              DOCUMENTATION
+            <Text
+              color="#8898AA"
+              style={{
+                marginTop: 16,
+                marginLeft: 8,
+                fontFamily: "open-sans-regular",
+              }}
+            >
+              LEGAL
             </Text>
           </Block>
           <DrawerCustomItem title="Getting Started" navigation={navigation} />
